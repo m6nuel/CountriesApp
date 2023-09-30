@@ -4,7 +4,7 @@ import Countries from './components/Countries'
 function App () {
   return (
     <>
-      <h1>Countries</h1>
+      <h1>Countries App</h1>
       <Countries />
     </>
   )
