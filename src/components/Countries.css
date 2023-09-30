@@ -1,0 +1,41 @@
+.countries {  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.countries ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+    gap: 1rem;
+    font-size: 10px;
+}
+
+.countries li {
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.1rem;
+}
+
+.products img {
+    border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    object-fit: cover;
+    background: #fff;
+}
+
+.products h3 {
+    margin: 0;
+}
+
+.products button {
+    padding: 5px;
+    width: fit-content;
+    position: relative;
+    right: -115px;
+}
