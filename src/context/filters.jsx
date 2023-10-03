@@ -5,7 +5,7 @@ export const FiltersContext = createContext()
 
 export function FilterProvider ({ children }) {
   const [filters, setFilters] = useState({
-    continents: 'Europe'
+    continents: 'all'
   })
   return (
     <FiltersContext.Provider value={{
