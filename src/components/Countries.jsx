@@ -1,13 +1,12 @@
-import { countriess } from '../service/countries'
+/* eslint-disable react/prop-types */
 import Card from './Card'
-// import Card from './Card'
 import './Countries.css'
-function Countries () {
+function Countries ({ countries }) {
   return (
     <main className='countries'>
       <ul>
         {
-          countriess.map(country => (
+          countries.map(country => (
             <Card key={country.id} country={country}/>
           ))
         }
