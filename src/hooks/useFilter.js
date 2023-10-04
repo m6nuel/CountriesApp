@@ -12,5 +12,33 @@ export function useFilter () {
       )
     })
   }
-  return { filters, filterContinents, setFilters }
+
+  const ordenAlpha = (countries) => {
+    if (filters.alpha === 'all') return countries
+
+    if (filters.alpha === 'asc') {
+      return countries.sort((a, b) => {
+        if (a.nombre > b.nombre) {
+          return 1
+        }
+        if (b.nombre > a.nombre) {
+          return -1
+        }
+        return 0
+      })
+    }
+    if (filters.alpha === 'des') {
+      return countries.sort((a, b) => {
+        if (a.nombre > b.nombre) {
+          return -1
+        }
+        if (b.nombre > a.nombre) {
+          return 1
+        }
+        return 0
+      }
+      )
+    }
+  }
+  return { filters, filterContinents, ordenAlpha, setFilters }
 }
