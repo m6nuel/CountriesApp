@@ -4,6 +4,7 @@ import Countries from './components/Countries'
 import { countriess } from '../src/service/countries'
 import { useFilter } from './hooks/useFilter'
 import Footer from './components/Footer'
+import Header from './components/Header'
 
 function App () {
   const { filterContinents, ordenAlpha } = useFilter()
@@ -11,7 +12,7 @@ function App () {
   const continentsOrdered = ordenAlpha(continentsFiltered)
   return (
     <>
-      <h1>Countries App</h1>
+      <Header />
       <Aside />
       <Countries countries={continentsOrdered} />
       <Footer />
