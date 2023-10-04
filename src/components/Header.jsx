@@ -1,13 +1,28 @@
+import { useState } from 'react'
+
 function Header () {
+  const [search, setSearch] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
+    setSearch('')
+    console.log(search)
+  }
+
+  const handleChange = (e) => {
+    const search = e.target.value
+    setSearch(search)
+    console.log(search)
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="">Buscar País: </label>
-        <input type="text" placeholder="Argentina, Bolivia, colomb..." />
+        <label>Buscar País: </label>
+        <input
+          onChange={handleChange}
+          placeholder="Argentina, Bolivia, colomb..."
+          value={search}
+        />
         <button type="submit">Buscar</button>
       </form>
     </>
