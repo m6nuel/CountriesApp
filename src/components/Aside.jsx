@@ -1,13 +1,13 @@
-import { useId, useContext } from 'react'
+import { useId } from 'react'
 import './Aside.css'
 import { useFilter } from '../hooks/useFilter'
-import { FiltersContext } from '../context/filters'
+// import { FiltersContext } from '../context/filters'
 
 function Aside () {
   const filterContinent = useId()
   const ordenAlpha = useId()
-  const { setFilters } = useFilter()
-  const { filters } = useContext(FiltersContext)
+  const { filters, setFilters } = useFilter()
+  // const { filters } = useContext(FiltersContext)
 
   const handleContinent = (event) => {
     setFilters(prevState => ({
@@ -23,8 +23,21 @@ function Aside () {
     }))
   }
 
+  const handleReset = () => {
+    console.log('reset')
+    // setFilters(prevState => ({
+    //   ...prevState,
+
+    // }))
+  }
+
   return (
     <div className="filtros">
+      <div>
+        <button onClick={handleReset}>
+          Resetear Filtros!!
+        </button>
+      </div>
       <div>
         <label htmlFor={filterContinent}>Continente: </label>
         <select name="" id={filterContinent} onChange={handleContinent} value={filters.continents}>
@@ -40,7 +53,7 @@ function Aside () {
 
       <div>
         <label htmlFor={ordenAlpha}>Orden Alfabetico: </label>
-        <select name="" id={ordenAlpha} onChange={handleOrdenAlpha}>
+        <select name="" id={ordenAlpha} onChange={handleOrdenAlpha} value={filters.alpha}>
           <option value="all">Todo</option>
           <option value="asc">Orden Ascendente</option>
           <option value="des">Orden Descendente</option>

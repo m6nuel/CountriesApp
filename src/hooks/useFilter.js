@@ -40,5 +40,6 @@ export function useFilter () {
       )
     }
   }
+
   return { filters, filterContinents, ordenAlpha, setFilters }
 }
