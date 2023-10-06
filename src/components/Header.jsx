@@ -1,19 +1,7 @@
-import { useState } from 'react'
+import { useSearch } from '../hooks/useSearch'
 
 function Header () {
-  const [search, setSearch] = useState('')
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSearch('')
-    console.log(search)
-  }
-
-  const handleChange = (e) => {
-    const search = e.target.value
-    setSearch(search)
-    console.log(search)
-  }
-
+  const { handleChange, handleSubmit, search } = useSearch()
   return (
     <>
       <form onSubmit={handleSubmit}>
