@@ -24,11 +24,7 @@ function Aside () {
   }
 
   const handleReset = () => {
-    console.log('reset')
-    // setFilters(prevState => ({
-    //   ...prevState,
-
-    // }))
+    window.location.reload()
   }
 
   return (
